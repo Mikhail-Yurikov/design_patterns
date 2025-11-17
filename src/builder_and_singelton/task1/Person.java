@@ -44,7 +44,11 @@ public class Person {
     }
 
     public OptionalInt getAge() {
-        return OptionalInt.of(age);
+        if (age != 0) {
+            return OptionalInt.of(age);
+        } else {
+            return OptionalInt.empty();
+        }
     }
 
     public String getAddress() {
